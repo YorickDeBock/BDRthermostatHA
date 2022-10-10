@@ -152,7 +152,9 @@ class BdrAPI:
 
         for subsystem_name, subsystem in capabilities.items():
             if isinstance(subsystem, list):
-                if len(subsystem) > 0:
+                if len(subsystem) > 1:
+                    subsystem = subsystem[1]
+                elif len(subsystem) > 0:
                     subsystem = subsystem[0]
                 else:
                     continue
